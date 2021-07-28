@@ -16,11 +16,6 @@ import com.ratz.hrworker.repositories.WorkerRepository;
 @RequestMapping(value = "/workers")
 public class WorkerResource {
 
-	private static org.slf4j.Logger logger= org.slf4j.LoggerFactory.getLogger(WorkerResource.class);
-	
-	@Autowired
-	private org.springframework.core.env.Environment env;
-	
 	@Autowired
 	private WorkerRepository repository;
 	
@@ -33,10 +28,6 @@ public class WorkerResource {
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findWorkerById(@PathVariable Long id) {
-		
-		logger.info("PORT = " + env.getProperty("local.server.port"));
-		
-		
 		Worker worker = repository.findById(id).get();
 		return ResponseEntity.ok(worker);
 				
