@@ -19,7 +19,7 @@ public class UserResource {
 	private UserService service;
 	
 	@GetMapping(value = "/search")
-	private ResponseEntity<User> findUserByEmail(@RequestParam String email) {
+	public ResponseEntity<User> findUserByEmail(@RequestParam String email) {
 		
 		try {
 			User user = service.findByEmail(email);
