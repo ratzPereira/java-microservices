@@ -11,7 +11,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_worker")
 public class Worker implements Serializable {
-	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -21,7 +20,6 @@ public class Worker implements Serializable {
 	private Double dailyIncome;
 	
 	public Worker() {
-		super();
 	}
 
 	public Worker(Long id, String name, Double dailyIncome) {
@@ -79,7 +77,4 @@ public class Worker implements Serializable {
 			return false;
 		return true;
 	}
-
-	
-	
 }
